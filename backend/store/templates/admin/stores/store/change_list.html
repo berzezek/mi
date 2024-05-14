@@ -1,0 +1,13 @@
+{% extends "admin/change_list.html" %}
+{% block content %}
+<h1>Aggregated Products Data</h1>
+{% for store, products in aggregated_data.items %}
+  <h2>{{ store.name }}</h2>
+  <table>
+    <tr><th>Product</th><th>Quantity</th></tr>
+    {% for product, quantity in products.items %}
+    <tr><td>{{ product.title }}</td><td>{{ quantity }}</td></tr>
+    {% endfor %}
+  </table>
+{% endfor %}
+{% endblock %}
